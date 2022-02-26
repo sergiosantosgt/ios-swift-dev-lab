@@ -26,13 +26,13 @@ class TrustKitHandler {
                         "zCTnfLwLKbS9S2sbp+uFz4KZOocFvXxkV06Ce9O5M2w="
                     ]
                 ],
-                "google.com": [
+                "viacep.com.br": [
                     kTSKEnforcePinning: true,
                     kTSKIncludeSubdomains: false,
                     kTSKExpirationDate: "2022-12-30",
                     kTSKPublicKeyHashes: [
-                        "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
-                        "zCTnfLwLKbS9S2sbp+uFz4KZOocFvXxkV06Ce9O5M2w="
+                        "M3uGk9RnuzI9Had2U8RA+AlgNjpNb8q0OZYRwb7pJX0=",
+                        "4a6cPehI7OG6cuDZka5NDZ7FR8a60d3auda+sKfg4Ng="
                     ]
                 ]
             ]

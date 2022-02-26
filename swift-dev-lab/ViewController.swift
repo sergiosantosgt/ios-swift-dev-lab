@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let session = URLSession(configuration: URLSessionConfiguration.ephemeral, delegate: self, delegateQueue: OperationQueue.main)
-        let url = "https://www.google.com"
+        let url = "https://viacep.com.br/ws/01001000/json/"
         let fetchApiRequest = FetchApiRequest()
         fetchApiRequest.fetchApiRequest(url: url, method: "GET", data: "", viewSession: session,
             completion: { (response) in
