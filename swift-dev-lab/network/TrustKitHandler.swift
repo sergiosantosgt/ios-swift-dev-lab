@@ -12,7 +12,9 @@ class TrustKitHandler {
     
     private func getTrustKitConfig() -> [String : Any] {
         TrustKit.setLoggerBlock { (message) in
-            print("TrustKit log: \(message)")
+            if(message.contains("error")) {
+                print("TrustKit log: \(message)")
+            }
         }
         let trustKitConfig: [String: Any] = [
             kTSKSwizzleNetworkDelegates: false,

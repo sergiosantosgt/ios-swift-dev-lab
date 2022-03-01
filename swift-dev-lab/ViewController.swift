@@ -8,26 +8,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var zipCode: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let session = URLSession(configuration: URLSessionConfiguration.ephemeral, delegate: self, delegateQueue: OperationQueue.main)
-        let url = "https://viacep.com.br/ws/01001000/json/"
-        let fetchApiRequest = FetchApiRequest()
-        fetchApiRequest.fetchApiRequest(url: url, method: "GET", data: "", viewSession: session,
-            completion: { (response) in
-                if let res = response as? NSDictionary {
-                    print("Api response \(res)")
-                }
-            }, errorState: { (error) in
-                print("ERROR FETCH API \(String(describing: error))")
-            })
+        
+        //init zipCode empty
+        self.zipCode.text = ""
+        
+        let addressService = AddressService()
+        addressService.getAddress(zipCode: "01001000", completion: { (response) in
+            print("RESPONSE \(String(describing: response))")
+            self.zipCode.text = response?.cep
+        })
     }
 
 
 }
 
+// Extension to bypass SSL Verify - localhost
 extension ViewController: URLSessionDelegate {
 //    public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
 //       //Trust the certificate even if not valid

@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		88300E4E27C9C5150066F997 /* TrustKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88300E4D27C9C5150066F997 /* TrustKitHandler.swift */; };
 		88300E5027C9C6610066F997 /* FetchApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88300E4F27C9C6610066F997 /* FetchApiRequest.swift */; };
+		88527B2027CAA424000F6ECE /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B1F27CAA424000F6ECE /* Address.swift */; };
+		88527B2127CAA424000F6ECE /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B1F27CAA424000F6ECE /* Address.swift */; };
+		88527B2327CE64DA000F6ECE /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B2227CE64DA000F6ECE /* NetworkUtils.swift */; };
+		88527B2427CE64DA000F6ECE /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B2227CE64DA000F6ECE /* NetworkUtils.swift */; };
+		88527B2727CE7453000F6ECE /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B2627CE7453000F6ECE /* AddressService.swift */; };
+		88527B2827CE7453000F6ECE /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B2627CE7453000F6ECE /* AddressService.swift */; };
+		88527B2A27CE7925000F6ECE /* NetworkUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B2927CE7925000F6ECE /* NetworkUrl.swift */; };
+		88527B2B27CE7925000F6ECE /* NetworkUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B2927CE7925000F6ECE /* NetworkUrl.swift */; };
 		88B49FB227C88BB50093038C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B49FB127C88BB50093038C /* AppDelegate.swift */; };
 		88B49FB427C88BB50093038C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B49FB327C88BB50093038C /* SceneDelegate.swift */; };
 		88B49FB627C88BB50093038C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B49FB527C88BB50093038C /* ViewController.swift */; };
@@ -42,6 +50,10 @@
 		6E564E27CBF2667F7265B453 /* Pods-swift-dev-lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-dev-lab.debug.xcconfig"; path = "Target Support Files/Pods-swift-dev-lab/Pods-swift-dev-lab.debug.xcconfig"; sourceTree = "<group>"; };
 		88300E4D27C9C5150066F997 /* TrustKitHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustKitHandler.swift; sourceTree = "<group>"; };
 		88300E4F27C9C6610066F997 /* FetchApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchApiRequest.swift; sourceTree = "<group>"; };
+		88527B1F27CAA424000F6ECE /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		88527B2227CE64DA000F6ECE /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		88527B2627CE7453000F6ECE /* AddressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; };
+		88527B2927CE7925000F6ECE /* NetworkUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUrl.swift; sourceTree = "<group>"; };
 		88B49FAE27C88BB50093038C /* swift-dev-lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-dev-lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B49FB127C88BB50093038C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88B49FB327C88BB50093038C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88527B2527CE743D000F6ECE /* service */ = {
+			isa = PBXGroup;
+			children = (
+				88527B2627CE7453000F6ECE /* AddressService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		88B49FA527C88BB50093038C = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +130,7 @@
 		88B49FB027C88BB50093038C /* swift-dev-lab */ = {
 			isa = PBXGroup;
 			children = (
+				88527B2527CE743D000F6ECE /* service */,
 				88B49FE727C908770093038C /* model */,
 				88B49FE627C908650093038C /* controller */,
 				88B49FE527C908420093038C /* network */,
@@ -146,6 +167,8 @@
 			children = (
 				88300E4D27C9C5150066F997 /* TrustKitHandler.swift */,
 				88300E4F27C9C6610066F997 /* FetchApiRequest.swift */,
+				88527B2227CE64DA000F6ECE /* NetworkUtils.swift */,
+				88527B2927CE7925000F6ECE /* NetworkUrl.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -160,6 +183,7 @@
 		88B49FE727C908770093038C /* model */ = {
 			isa = PBXGroup;
 			children = (
+				88527B1F27CAA424000F6ECE /* Address.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -356,10 +380,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88527B2027CAA424000F6ECE /* Address.swift in Sources */,
+				88527B2A27CE7925000F6ECE /* NetworkUrl.swift in Sources */,
 				88300E4E27C9C5150066F997 /* TrustKitHandler.swift in Sources */,
 				88B49FB627C88BB50093038C /* ViewController.swift in Sources */,
 				88300E5027C9C6610066F997 /* FetchApiRequest.swift in Sources */,
 				88B49FB227C88BB50093038C /* AppDelegate.swift in Sources */,
+				88527B2327CE64DA000F6ECE /* NetworkUtils.swift in Sources */,
+				88527B2727CE7453000F6ECE /* AddressService.swift in Sources */,
 				88B49FB427C88BB50093038C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +396,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88527B2127CAA424000F6ECE /* Address.swift in Sources */,
+				88527B2427CE64DA000F6ECE /* NetworkUtils.swift in Sources */,
+				88527B2827CE7453000F6ECE /* AddressService.swift in Sources */,
+				88527B2B27CE7925000F6ECE /* NetworkUrl.swift in Sources */,
 				88B49FC927C88BB80093038C /* swift_dev_labTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

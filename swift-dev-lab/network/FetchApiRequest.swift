@@ -18,25 +18,26 @@ class FetchApiRequest: UIViewController, URLSessionDelegate {
                                          delegateQueue: OperationQueue.main)
     }()
     
-    func fetchApiRequest(url: String, method: String, data: Any, viewSession: URLSession, completion: @escaping (_ response: Any?) -> Void, errorState: @escaping (_ errorState: URLError?) -> Void) {
+    func fetchApiRequest(url: String, method: String, data: Any, completion: @escaping (_ response: Any?) -> Void, errorState: @escaping (_ errorState: URLError?) -> Void) {
 
         let url = URL(string: url)!
         var request = URLRequest(url: url)
         request.httpMethod = method
         
-        if(Bundle.main.infoDictionary?["isHml"] as? Bool ?? false) {
+        /*if(Bundle.main.infoDictionary?["isHml"] as? Bool ?? false) {
             // get session from View
             self.session = viewSession
-        }
+        }*/
         
         let task = self.session.dataTask(with: request) { [weak self] (data, response, error) in
             DispatchQueue.global().sync {
                 if let error = error {
                     errorState(error as? URLError)
-                }else {
+                } else {
                     do {
                         let res = try JSONSerialization.jsonObject(with: data!)
-                        completion(res)
+                        let dataDecoded = try JSONSerialization.data(withJSONObject: res, options: [])
+                        completion(dataDecoded)
                         /*DispatchQueue.main.async {
                             let res = try JSONSerialization.jsonObject(with: data!)
                             print("fetchApiRequest *** \(data)")
