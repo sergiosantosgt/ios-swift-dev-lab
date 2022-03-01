@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         //init zipCode empty
         self.zipCode.text = ""
         
+        // Make Http Request
         let addressService = AddressService()
         addressService.getAddress(zipCode: "01001000", completion: { (response) in
             print("RESPONSE \(String(describing: response))")
@@ -32,8 +33,7 @@ class ViewController: UIViewController {
 extension ViewController: URLSessionDelegate {
 //    public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
 //       //Trust the certificate even if not valid
-//        if(Bundle.main.infoDictionary?["isHK"] as? Bool ?? false) {
-//            print("Ambiente de HK: Aplicando urlCredential rule")
+//        if(Bundle.main.infoDictionary?["isHml"] as? Bool ?? false) {
 //            let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
 //            completionHandler(.useCredential, urlCredential)
 //        }
