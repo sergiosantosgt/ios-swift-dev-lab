@@ -10,22 +10,39 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var zipCode: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var neighborhoodLabel: UILabel!
+    @IBOutlet weak var addressCityLabel: UILabel!
+    @IBOutlet weak var addressStateLabel: UILabel!
+    
+    
+    // Init Address Service
+    let addressService = AddressService()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //init zipCode empty
-        self.zipCode.text = ""
+        addressTextField.delegate = self
+        self.addressLabel.text = ""
+        self.neighborhoodLabel.text = ""
+        self.addressCityLabel.text = ""
+        self.addressStateLabel.text = ""
         
+    }
+    
+    func getAddress(text: String) {
         // Make Http Request
-        let addressService = AddressService()
-        addressService.getAddress(zipCode: "01001000", completion: { (response) in
+        addressService.getAddress(zipCode: text, completion: { (response) in
             print("RESPONSE \(String(describing: response))")
-            self.zipCode.text = response?.cep
+            self.addressLabel.text = response?.logradouro
+            self.neighborhoodLabel.text = response?.bairro
+            self.addressCityLabel.text = response?.localidade
+            self.addressStateLabel.text = response?.uf
         })
     }
-
 
 }
 
@@ -38,4 +55,13 @@ extension ViewController: URLSessionDelegate {
 //            completionHandler(.useCredential, urlCredential)
 //        }
 //    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("DONE")
+        getAddress(text: textField.text!)
+        textField.resignFirstResponder()
+        return true;
+    }
 }
