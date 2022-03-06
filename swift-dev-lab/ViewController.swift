@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var addressStateLabel: UILabel!
     
     let limitLength = 9
+    var someString = String()
     
     // Init Services
     let addressService = AddressService()

@@ -23,6 +23,8 @@
 		88527B3127D1AEFA000F6ECE /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B2F27D1AEFA000F6ECE /* Films.swift */; };
 		88527B3327D1B000000F6ECE /* FilmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B3227D1B000000F6ECE /* FilmService.swift */; };
 		88527B3427D1B000000F6ECE /* FilmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B3227D1B000000F6ECE /* FilmService.swift */; };
+		88527B3627D44329000F6ECE /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B3527D44329000F6ECE /* OptionsViewController.swift */; };
+		88527B3727D44329000F6ECE /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88527B3527D44329000F6ECE /* OptionsViewController.swift */; };
 		88B49FB227C88BB50093038C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B49FB127C88BB50093038C /* AppDelegate.swift */; };
 		88B49FB427C88BB50093038C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B49FB327C88BB50093038C /* SceneDelegate.swift */; };
 		88B49FB627C88BB50093038C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B49FB527C88BB50093038C /* ViewController.swift */; };
@@ -63,6 +65,7 @@
 		88527B2C27D1A3B5000F6ECE /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		88527B2F27D1AEFA000F6ECE /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
 		88527B3227D1B000000F6ECE /* FilmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmService.swift; sourceTree = "<group>"; };
+		88527B3527D44329000F6ECE /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		88B49FAE27C88BB50093038C /* swift-dev-lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-dev-lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B49FB127C88BB50093038C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88B49FB327C88BB50093038C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 				88B49FE527C908420093038C /* network */,
 				88B49FB127C88BB50093038C /* AppDelegate.swift */,
 				88B49FB327C88BB50093038C /* SceneDelegate.swift */,
+				88527B3527D44329000F6ECE /* OptionsViewController.swift */,
 				88B49FB527C88BB50093038C /* ViewController.swift */,
 				88B49FB727C88BB50093038C /* Main.storyboard */,
 				88B49FBA27C88BB80093038C /* Assets.xcassets */,
@@ -400,6 +404,7 @@
 				88B49FB627C88BB50093038C /* ViewController.swift in Sources */,
 				88300E5027C9C6610066F997 /* FetchApiRequest.swift in Sources */,
 				88B49FB227C88BB50093038C /* AppDelegate.swift in Sources */,
+				88527B3627D44329000F6ECE /* OptionsViewController.swift in Sources */,
 				88527B2327CE64DA000F6ECE /* NetworkUtils.swift in Sources */,
 				88527B3327D1B000000F6ECE /* FilmService.swift in Sources */,
 				88527B2727CE7453000F6ECE /* AddressService.swift in Sources */,
@@ -414,6 +419,7 @@
 				88527B2127CAA424000F6ECE /* Address.swift in Sources */,
 				88527B2E27D1A3B5000F6ECE /* Film.swift in Sources */,
 				88527B2427CE64DA000F6ECE /* NetworkUtils.swift in Sources */,
+				88527B3727D44329000F6ECE /* OptionsViewController.swift in Sources */,
 				88527B3127D1AEFA000F6ECE /* Films.swift in Sources */,
 				88527B2827CE7453000F6ECE /* AddressService.swift in Sources */,
 				88527B3427D1B000000F6ECE /* FilmService.swift in Sources */,
