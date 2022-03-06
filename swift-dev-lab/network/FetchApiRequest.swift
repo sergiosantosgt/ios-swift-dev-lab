@@ -7,8 +7,9 @@
 
 import Foundation
 import TrustKit
+import Alamofire
 
-class FetchApiRequest: UIViewController, URLSessionDelegate {
+class FetchApiRequest: SessionDelegate {
     
     static let shared = FetchApiRequest()
     
@@ -16,6 +17,10 @@ class FetchApiRequest: UIViewController, URLSessionDelegate {
         URLSession(configuration: URLSessionConfiguration.ephemeral,
                                          delegate: self,
                                          delegateQueue: OperationQueue.main)
+    }()
+    
+    lazy var sessionManager: Session = {
+        Session(configuration: URLSessionConfiguration.ephemeral, delegate: self)
     }()
     
     func fetchApiRequest(url: String, method: String, data: Any, completion: @escaping (_ response: Any?) -> Void, errorState: @escaping (_ errorState: URLError?) -> Void) {
@@ -38,11 +43,6 @@ class FetchApiRequest: UIViewController, URLSessionDelegate {
                         let res = try JSONSerialization.jsonObject(with: data!)
                         let dataDecoded = try JSONSerialization.data(withJSONObject: res, options: [])
                         completion(dataDecoded)
-                        /*DispatchQueue.main.async {
-                            let res = try JSONSerialization.jsonObject(with: data!)
-                            print("fetchApiRequest *** \(data)")
-                            completion(data)
-                        }*/
                     } catch {
                         errorState(error as? URLError)
                     }
@@ -51,6 +51,25 @@ class FetchApiRequest: UIViewController, URLSessionDelegate {
         }
         task.resume()
     }
+    
+    func makeRequestAlamofire(route: URL, method: HTTPMethod, parameter: Parameters? = nil, headers: HTTPHeaders? = nil, completion: @escaping (_ response: Data) -> Void){
+          
+        sessionManager.request(route, method: method, parameters: parameter, encoding: JSONEncoding.default, headers: headers ).validate(statusCode: 200..<300).validate(contentType: ["application/json"]).responseData { response in
+                  //Pin Validtion returner
+                  guard response.error == nil else {
+                      // Display Error Alert
+                      print("Result Pinning validation failed for \(route.absoluteString)\n\n\(response.error.debugDescription)")
+                      return
+                  }
+                  switch response.result {
+                    case .success:
+                      guard let ret = response.data else { return }
+                      completion(ret)
+                    case .failure(let error):
+                      print("Alamofire Request Fail \(error)")
+                  }
+          }
+      }
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         

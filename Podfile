@@ -8,6 +8,7 @@ target 'swift-dev-lab' do
   pod 'SDWebImage'
   pod 'SwiftKeychainWrapper'
   pod 'TrustKit'
+  pod 'Alamofire', '~> 5.5'
 
 end
 

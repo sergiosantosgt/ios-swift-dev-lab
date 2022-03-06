@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.5.0)
   - Firebase/Auth (6.31.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.9.0)
@@ -62,6 +63,7 @@ PODS:
   - TrustKit (2.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.5)
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
@@ -71,6 +73,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Firebase
     - FirebaseAuth
     - FirebaseCore
@@ -88,6 +91,7 @@ SPEC REPOS:
     - TrustKit
 
 SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   Firebase: 87483fa19acfdf99244523f2389e931927b91457
   FirebaseAuth: 09f086fae98643f1ef235674cf3ae171ce26f5ba
   FirebaseCore: 6fb954e350af0885803d5aa49865d15d9a6b264c
@@ -104,6 +108,6 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   TrustKit: 610b8c71c07914756dd74c380040a3408a747798
 
-PODFILE CHECKSUM: 2837b1d80b8e030db05b6604e8518cc396c6103b
+PODFILE CHECKSUM: 38c1db1cfd320aee560f530e8b4b0335c075dfd9
 
 COCOAPODS: 1.9.3
