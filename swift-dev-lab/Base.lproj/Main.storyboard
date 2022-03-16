@@ -45,11 +45,12 @@
                             <constraint firstItem="gd8-fd-zD0" firstAttribute="leading" secondItem="D3F-eF-fqs" secondAttribute="leading" id="pWj-Ro-FlU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Funcionalidades" largeTitleDisplayMode="always" id="eeb-u1-7Px"/>
+                    <navigationItem key="navigationItem" title="Functions" largeTitleDisplayMode="always" id="eeb-u1-7Px"/>
                     <connections>
                         <outlet property="tableView" destination="gd8-fd-zD0" id="Bxs-wi-zPD"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showAddressSearch" id="EX0-MD-Gwm"/>
                         <segue destination="TZj-8f-mNl" kind="show" identifier="showWebView" id="v6S-Qm-Jzk"/>
+                        <segue destination="ALw-P3-l0L" kind="show" identifier="showBiometric" id="gCP-bi-ius"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQi-Kb-rud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -168,6 +169,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tb8-uY-00q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2027.5362318840582" y="-668.30357142857144"/>
+        </scene>
+        <!--Biometric View Controller-->
+        <scene sceneID="9T5-iS-qWj">
+            <objects>
+                <viewController id="ALw-P3-l0L" customClass="BiometricViewController" customModule="swift_dev_lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7iP-yR-ltR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KQ7-lQ-cVR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GnB-y5-Sjj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14A-Wb-OKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2012" y="58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qor-AF-Bs5">

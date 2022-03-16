@@ -16,8 +16,9 @@ class OptionsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        options.append("Busca de endereços")
+        options.append("Service (Address Search)")
         options.append("WebView")
+        options.append("Biometric")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +57,8 @@ class OptionsViewController: UIViewController, UITableViewDelegate, UITableViewD
             str = "showAddressSearch"
         case 1:
             str = "showWebView"
+        case 2:
+            str = "showBiometric"
             
         default:
             fatalError("Invalid Option!")
