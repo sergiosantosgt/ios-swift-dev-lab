@@ -16,7 +16,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     var internalUrl: String = ""
     let url: String = "https://google.com"
     
-    let redirect: String = "Você será redirecionado para uma página fora do App. Deseja continuar?"
+    let redirect: String = "Você será redirecionado para fora do Aplicativo. Deseja continuar?"
     let confirm: String = "OK"
     let cancel: String = "Cancelar"
     
