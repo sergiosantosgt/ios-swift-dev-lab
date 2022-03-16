@@ -17,6 +17,7 @@ class OptionsViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         options.append("Busca de endereços")
+        options.append("WebView")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,13 +40,28 @@ class OptionsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "showAddressSearch", sender: options[indexPath.row])
+        performSegue(withIdentifier: getSegueIdentifier(index: indexPath.row), sender: options[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let svc = segue.destination as! ViewController
-        svc.someString = sender as! String
+//        let svc = segue.destination as! ViewController
+//        svc.someString = sender as! String
     }
     
+    public func getSegueIdentifier(index: Int) -> String {
+        var str: String
+        
+        switch index {
+        case 0:
+            str = "showAddressSearch"
+        case 1:
+            str = "showWebView"
+            
+        default:
+            fatalError("Invalid Option!")
+        }
+        
+        return str
+    }
     
 }
