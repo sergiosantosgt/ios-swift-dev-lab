@@ -14,7 +14,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
     var webView: WKWebView!
     var internalUrl: String = ""
-    let url: String = "https://google.com"
+    let urlWebView: String = "https://google.com"
     
     let redirect: String = "Você será redirecionado para fora do Aplicativo. Deseja continuar?"
     let confirm: String = "OK"
@@ -46,7 +46,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     }
     
     func setWebView() {
-        let url = URL(string: url)
+        let url = URL(string: urlWebView)
         let request = URLRequest(url: url!)
         webView.frame = view.bounds
         webView.navigationDelegate = self
