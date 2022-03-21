@@ -10,6 +10,7 @@ import UIKit
 import LocalAuthentication
 
 class BiometricViewController: UIViewController {
+    @IBOutlet weak var biometricLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,12 @@ class BiometricViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateBiometricLabel(text: String) {
+        DispatchQueue.main.async {
+            self.biometricLabel.text = text
+        }
     }
     
 }
@@ -39,6 +46,8 @@ extension BiometricViewController {
                 if success {
                     
                     //TODO: User authenticated successfully, take appropriate action
+                    self.updateBiometricLabel(text: "Validation TRUE")
+                    
                     
                 } else {
                     //TODO: User did not authenticate successfully, look at error and take appropriate action
@@ -50,6 +59,8 @@ extension BiometricViewController {
                     
                     //TODO: If you have choosen the 'Fallback authentication mechanism selected' (LAError.userFallback). Handle gracefully
                     
+                    self.updateBiometricLabel(text: "Validation FALSE")
+                    
                 }
             }
         } else {
@@ -59,6 +70,8 @@ extension BiometricViewController {
             }
             //TODO: Show appropriate alert if biometry/TouchID/FaceID is lockout or not enrolled
             print(self.evaluateAuthenticationPolicyMessageForLA(errorCode: error.code))
+            
+            self.updateBiometricLabel(text: "Biometric FALSE")
         }
     }
     
