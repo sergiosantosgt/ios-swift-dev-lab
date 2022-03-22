@@ -50,6 +50,7 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showAddressSearch" id="EX0-MD-Gwm"/>
                         <segue destination="TZj-8f-mNl" kind="show" identifier="showWebView" id="v6S-Qm-Jzk"/>
                         <segue destination="ALw-P3-l0L" kind="show" identifier="showBiometric" id="gCP-bi-ius"/>
+                        <segue destination="zC8-vk-s5t" kind="show" identifier="showXibCustomLayout" id="02R-ZR-afD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQi-Kb-rud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -167,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tb8-uY-00q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2027.5362318840582" y="-668.30357142857144"/>
+            <point key="canvasLocation" x="1723" y="-792"/>
         </scene>
         <!--Biometric View Controller-->
         <scene sceneID="9T5-iS-qWj">
@@ -199,7 +200,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14A-Wb-OKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2011.594202898551" y="57.589285714285708"/>
+            <point key="canvasLocation" x="1320" y="67"/>
+        </scene>
+        <!--Custom Layout View Controller-->
+        <scene sceneID="dKJ-nz-v9l">
+            <objects>
+                <viewController id="zC8-vk-s5t" customClass="CustomLayoutViewController" customModule="swift_dev_lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2V8-ts-Cqv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIF-eC-Djn" customClass="NoRecordView" customModule="swift_dev_lab" customModuleProvider="target">
+                                <rect key="frame" x="20" y="384" width="374" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HLb-yr-Wcf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kIF-eC-Djn" firstAttribute="centerX" secondItem="2V8-ts-Cqv" secondAttribute="centerX" id="UrC-97-VeD"/>
+                            <constraint firstItem="kIF-eC-Djn" firstAttribute="leading" secondItem="2V8-ts-Cqv" secondAttribute="leadingMargin" id="a7X-Ge-etI"/>
+                            <constraint firstItem="kIF-eC-Djn" firstAttribute="centerY" secondItem="2V8-ts-Cqv" secondAttribute="centerY" id="bum-qO-nhb"/>
+                            <constraint firstItem="kIF-eC-Djn" firstAttribute="top" secondItem="HLb-yr-Wcf" secondAttribute="top" constant="296" id="s7H-gd-bsS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GMz-JJ-Wch"/>
+                    <connections>
+                        <outlet property="noRecordViewStory" destination="kIF-eC-Djn" id="SHV-2y-WoD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKS-gL-PeN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276.8115942028987" y="794.86607142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qor-AF-Bs5">
