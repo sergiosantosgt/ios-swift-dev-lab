@@ -20,6 +20,7 @@ class OptionsViewController: UIViewController, UITableViewDelegate, UITableViewD
         options.append("WebView")
         options.append("Biometric")
         options.append("Custom Layout (.xib)")
+        options.append("Alerts")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,6 +63,8 @@ class OptionsViewController: UIViewController, UITableViewDelegate, UITableViewD
             str = "showBiometric"
         case 3:
             str = "showXibCustomLayout"
+        case 4:
+            str = "showAlertView"
             
         default:
             fatalError("Invalid Option!")
