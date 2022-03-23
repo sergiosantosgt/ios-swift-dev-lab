@@ -52,11 +52,41 @@
                         <segue destination="ALw-P3-l0L" kind="show" identifier="showBiometric" id="gCP-bi-ius"/>
                         <segue destination="zC8-vk-s5t" kind="show" identifier="showXibCustomLayout" id="02R-ZR-afD"/>
                         <segue destination="TjZ-SJ-RRx" kind="show" identifier="showAlertView" id="hwV-gc-XDc"/>
+                        <segue destination="fTF-Xy-dRy" kind="show" identifier="showThreadsView" id="2r8-gt-YYw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQi-Kb-rud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="192.75362318840581" y="66.964285714285708"/>
+        </scene>
+        <!--Threads View Controller-->
+        <scene sceneID="2zo-TW-zHS">
+            <objects>
+                <viewController id="fTF-Xy-dRy" customClass="ThreadsViewController" customModule="swift_dev_lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LGb-Hj-H4s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Threads in console" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTb-2u-30P">
+                                <rect key="frame" x="20" y="98" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0zO-bS-eAX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lTb-2u-30P" firstAttribute="leading" secondItem="0zO-bS-eAX" secondAttribute="leading" constant="20" id="3aY-Jk-CcI"/>
+                            <constraint firstItem="0zO-bS-eAX" firstAttribute="trailing" secondItem="lTb-2u-30P" secondAttribute="trailing" constant="20" id="9BI-RD-DmH"/>
+                            <constraint firstItem="lTb-2u-30P" firstAttribute="top" secondItem="0zO-bS-eAX" secondAttribute="top" constant="10" id="MNB-hl-Acc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nyw-jJ-qUf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wIN-vo-h4a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-394.20289855072468" y="-668.30357142857144"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

@@ -21,6 +21,7 @@ class OptionsViewController: UIViewController, UITableViewDelegate, UITableViewD
         options.append("Biometric")
         options.append("Custom Layout (.xib)")
         options.append("Alerts")
+        options.append("Threads")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,6 +66,8 @@ class OptionsViewController: UIViewController, UITableViewDelegate, UITableViewD
             str = "showXibCustomLayout"
         case 4:
             str = "showAlertView"
+        case 5:
+            str = "showThreadsView"
             
         default:
             fatalError("Invalid Option!")
