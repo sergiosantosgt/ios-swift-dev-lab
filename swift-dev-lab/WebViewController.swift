@@ -14,7 +14,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
     var webView: WKWebView!
     var internalUrl: String = ""
-    let urlWebView: String = "https://google.com"
+    let urlWebView: String = "https://apple.com"
     
     let redirect: String = "Você será redirecionado para fora do Aplicativo. Deseja continuar?"
     let confirm: String = "OK"
@@ -54,9 +54,51 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         webView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
     }
     
+    func loadWebPage(request: URLRequest)  {
+        var newRequest = request
+        newRequest.addValue(String(Date().currentTimeMillis()/1000/60), forHTTPHeaderField: "loaded")
+        webView!.load(newRequest)
+    }
+    
+    func presentNavigationAlert(msg: String, navigationUrl: URL){
+        let alert = UIAlertController(title: nil, message: msg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+            UIApplication.shared.open((navigationUrl))
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func getAppleLogoHref(webView: WKWebView) {
+        self.webView.evaluateJavaScript("(function() { return (document.getElementById('ac-gn-firstfocus-small').href); })();") { (value, error) in
+            
+            print("Value \(String(describing: value))")
+            
+            if value != nil {
+                let valueString: String = value as! String
+                let replacedValue = valueString.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "null", with: "").replacingOccurrences(of: "Optional()", with: "")
+                
+                print("replacedValue: \(String(describing: replacedValue))")
+            }
+        }
+    }
+    
+    func overrideAppleBarColor(webView: WKWebView) {
+        let el = "javascript:(function() { " +
+            "var headerBar = document.getElementById('ac-globalnav');"
+            + "headerBar.style.backgroundColor = 'red';" +
+        "})()"
+
+        webView.evaluateJavaScript(el, completionHandler: { (html, error) in
+            if error != nil {
+                print("Error: \(String(describing: error))")
+            }
+        })
+    }
+    
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         
-        if let url = navigationAction.request.url{
+        if let url = navigationAction.request.url {
             
             let destinationURL = navigationAction.request.url?.absoluteString
             
@@ -81,7 +123,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
             }
             
         } else {
-            print("Open it locally")
+            print("Not executed!")
         }
         
         var webViewC: WKWebView!
@@ -91,5 +133,53 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         self.webViewBox.addSubview(webViewC)
         
         return webViewC
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("WebView URL: \(String(describing: webView.url))")
+        let url: URL = webView.url!
+        if url.absoluteString.contains("apple.com") {
+            print("Apple Web View")
+            self.getAppleLogoHref(webView: webView)
+            self.overrideAppleBarColor(webView: webView)
+        } else {
+            print("Other Web View")
+        }
+    }
+}
+
+/*extension WebViewController {
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy)
+        -> Void) {
+        
+        let blank: String = "about:blank"
+        let destination = navigationAction.request.url?.absoluteString ?? blank
+        
+        if navigationAction.request.httpMethod != "GET" ||
+            navigationAction.request.value(forHTTPHeaderField: "loaded") != nil ||
+            destination.contains(blank) {
+            decisionHandler(.allow)
+            return
+        }
+        
+        
+        if (destination.contains("apple.com")) {
+            print("Inside \(destination)")
+            decisionHandler(.cancel)
+            loadWebPage(request: navigationAction.request)
+        } else {
+            print("Outside \(destination)")
+            decisionHandler(.cancel)
+            let navigationUrl = navigationAction.request.url!
+            self.presentNavigationAlert(msg: self.redirect, navigationUrl: navigationUrl)
+        }
+    }
+}*/
+
+extension Date {
+    func currentTimeMillis() -> Int64 {
+        return Int64(self.timeIntervalSince1970 * 1000)
     }
 }
