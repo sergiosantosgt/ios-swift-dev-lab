@@ -29,4 +29,22 @@ class SharedFunctions {
         
         return runWebView
     }
+    
+    func replaceBackSlash(value: String) -> String {
+        return value.replacingOccurrences(of: "\\", with: "\\\\")
+    }
+    
+    func readJSONFromFile(fileName: String) -> Any? {
+        var json: Any?
+        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
+            do {
+                let fileUrl = URL(fileURLWithPath: path)
+                let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
+                json = try? JSONSerialization.jsonObject(with: data)
+            } catch {
+                print("Error on read file!")
+            }
+        }
+        return json
+    }
 }

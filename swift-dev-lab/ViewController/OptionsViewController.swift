@@ -22,6 +22,8 @@ class OptionsViewController: UIViewController, UITableViewDelegate, UITableViewD
         options.append("Custom Layout (.xib)")
         options.append("Alerts")
         options.append("Threads")
+        options.append("User Defaults")
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +70,8 @@ class OptionsViewController: UIViewController, UITableViewDelegate, UITableViewD
             str = "showAlertView"
         case 5:
             str = "showThreadsView"
+        case 6:
+            str = "showUserDefaultsView"
             
         default:
             fatalError("Invalid Option!")

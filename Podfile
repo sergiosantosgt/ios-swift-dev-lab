@@ -12,5 +12,5 @@ target 'swift-dev-lab' do
 
 end
 
-# pod 'Dynatrace', '~> 8.181'
+# pod 'Dynatrace',
 # pod 'lottie-ios'
