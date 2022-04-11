@@ -161,13 +161,13 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		88527B2527CE743D000F6ECE /* Service */ = {
+		88527B2527CE743D000F6ECE /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				88527B2627CE7453000F6ECE /* AddressService.swift */,
 				88527B3227D1B000000F6ECE /* FilmService.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		88B49FA527C88BB50093038C = {
@@ -195,12 +195,12 @@
 		88B49FB027C88BB50093038C /* swift-dev-lab */ = {
 			isa = PBXGroup;
 			children = (
-				04C0EAF427E820C400A89D14 /* NoRecordView */,
-				8810591C27E1764C006CFD53 /* Shared */,
-				88527B2527CE743D000F6ECE /* Service */,
-				88B49FE727C908770093038C /* Model */,
-				88B49FE627C908650093038C /* ViewController */,
+				88B49FE627C908650093038C /* Controllers */,
+				88B49FE727C908770093038C /* Models */,
 				88B49FE527C908420093038C /* Network */,
+				04C0EAF427E820C400A89D14 /* NoRecordView */,
+				88527B2527CE743D000F6ECE /* Services */,
+				8810591C27E1764C006CFD53 /* Shared */,
 				88B49FB127C88BB50093038C /* AppDelegate.swift */,
 				88B49FB327C88BB50093038C /* SceneDelegate.swift */,
 				88B49FB727C88BB50093038C /* Main.storyboard */,
@@ -239,7 +239,7 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		88B49FE627C908650093038C /* ViewController */ = {
+		88B49FE627C908650093038C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				04FEC4B027E9788000BC834F /* AlertViewController.swift */,
@@ -251,17 +251,17 @@
 				04FEC4BC27EAB48300BC834F /* ThreadsViewController.swift */,
 				8810591F27E18A39006CFD53 /* WebViewController.swift */,
 			);
-			path = ViewController;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		88B49FE727C908770093038C /* Model */ = {
+		88B49FE727C908770093038C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				88527B1F27CAA424000F6ECE /* Address.swift */,
 				88527B2C27D1A3B5000F6ECE /* Film.swift */,
 				88527B2F27D1AEFA000F6ECE /* Films.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B1C243390AAAF6EEFE435EB9 /* Frameworks */ = {
