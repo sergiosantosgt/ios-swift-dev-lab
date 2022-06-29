@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var neighborhoodLabel: UILabel!
     @IBOutlet weak var addressCityLabel: UILabel!
     @IBOutlet weak var addressStateLabel: UILabel!
+    @IBOutlet weak var image: UIImageView!
     
     let limitLength = 9
     var someString = String()
@@ -38,6 +39,14 @@ class ViewController: UIViewController {
         self.neighborhoodLabel.text = ""
         self.addressCityLabel.text = ""
         self.addressStateLabel.text = ""
+        
+        /*image.translatesAutoresizingMaskIntoConstraints = false
+        image.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = false
+        image.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
+        image.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        image.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = false*/
+        
+        image.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     func getAddress(text: String) {

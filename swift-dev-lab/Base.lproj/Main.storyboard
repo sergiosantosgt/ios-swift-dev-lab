@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Nb-cG-MgC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Nb-cG-MgC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7mr-qV-RlY" id="Lxh-ux-LPC">
-                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -178,9 +178,9 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1295232" translatesAutoresizingMaskIntoConstraints="NO" id="byN-L0-KZd">
-                                <rect key="frame" x="128.5" y="122" width="157" height="84"/>
+                                <rect key="frame" x="100" y="122" width="84" height="84"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="157" id="IB9-nM-h0Z"/>
+                                    <constraint firstAttribute="width" constant="84" id="IB9-nM-h0Z"/>
                                     <constraint firstAttribute="height" constant="84" id="ibS-Qy-dGe"/>
                                 </constraints>
                             </imageView>
@@ -197,7 +197,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="It5-7q-KCW" secondAttribute="trailing" constant="20" id="11S-B2-3vN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cfD-Cc-zpZ" secondAttribute="trailing" constant="20" id="7dg-eW-oDQ"/>
                             <constraint firstItem="yPL-vd-PdN" firstAttribute="top" secondItem="byN-L0-KZd" secondAttribute="bottom" constant="36" id="8qc-Kc-p2n"/>
-                            <constraint firstItem="byN-L0-KZd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BAy-i9-qwg"/>
+                            <constraint firstItem="byN-L0-KZd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="AxZ-T2-oWq"/>
                             <constraint firstItem="yPL-vd-PdN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CxW-Lk-ltI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LCf-dK-pt7" secondAttribute="trailing" constant="20" id="IeK-z2-8fj"/>
                             <constraint firstItem="LCf-dK-pt7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KaR-NJ-ARt"/>
@@ -221,6 +221,7 @@
                         <outlet property="addressLabel" destination="cfD-Cc-zpZ" id="CbW-58-FCf"/>
                         <outlet property="addressStateLabel" destination="It5-7q-KCW" id="qdO-Oz-5d7"/>
                         <outlet property="addressTextField" destination="yPL-vd-PdN" id="1sY-78-A6B"/>
+                        <outlet property="image" destination="byN-L0-KZd" id="Csf-a1-G5a"/>
                         <outlet property="neighborhoodLabel" destination="qN7-Co-FH4" id="9nA-c0-0ke"/>
                     </connections>
                 </viewController>
