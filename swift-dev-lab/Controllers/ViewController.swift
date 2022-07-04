@@ -40,6 +40,9 @@ class ViewController: UIViewController {
         self.addressCityLabel.text = ""
         self.addressStateLabel.text = ""
         
+        
+        // TESTS
+        
         /*image.translatesAutoresizingMaskIntoConstraints = false
         image.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = false
         image.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
@@ -47,6 +50,13 @@ class ViewController: UIViewController {
         image.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = false*/
         
         image.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        // self.addressLabel.backgroundColor = .green
+        addressLabel.layer.cornerRadius = CGFloat(4)
+        addressLabel.layer.masksToBounds = true
+        
+        image.layer.cornerRadius = CGFloat(4)
+        // image.backgroundColor = .green
     }
     
     func getAddress(text: String) {
